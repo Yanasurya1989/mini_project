@@ -14,7 +14,7 @@
                   <tbody>
                     @foreach ($inv as $list)
                       <tr>
-                        <th scope="row">1</th>
+                        <th scope="row">{{ $loop->iteration}}</th>
                         <td>{{$list->code}}</td>
                         <td>{{$list->name}}</td>
                         <td>{{$list->price}}</td>
