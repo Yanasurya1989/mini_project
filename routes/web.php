@@ -24,5 +24,7 @@ Route::post('/inv/add', [Inventories_controller::class, 'store']);
 Route::get('/inv/delete/{inventories_model}', [Inventories_controller::class, 'destroy']);
 Route::get('/inv/edit/{inventories_model}', [Inventories_controller::class, 'edit']);
 Route::post('/inv/update/{inventories_model}', [Inventories_controller::class, 'update']);
+// export
+Route::get('/inv/export/excel', [Inventories_controller::class, 'export_excel']);
 
 Route::get('/master', [Inventories_controller::class, 'edit']);

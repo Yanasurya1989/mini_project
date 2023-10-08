@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportInventory;
 use App\Models\Inventories_model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Inventories_controller extends Controller
 {
@@ -156,4 +158,9 @@ class Inventories_controller extends Controller
                 return back()->withErrors('Data gagal dihapus');
             }
     }
+
+    function export_excel(){
+        return Excel::download(new ExportInventory, "inventory.xlsx");
+    }
+
 }
