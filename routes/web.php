@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Inventories_controller;
+use App\Http\Controllers\Auth_controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/inv', [Inventories_controller::class, 'index']);
+Route::get('/login', [Auth_controller::class, 'login'])->name('login')->middleware('guest');
+Route::post('/login', [Auth_controller::class, 'authenticating'])->middleware('guest');
+Route::get('/logout', [Auth_controller::class, 'logout'])->middleware('auth');
+Route::get('/inv', [Inventories_controller::class, 'index'])->middleware('auth');
 Route::get('/inv/create', [Inventories_controller::class, 'create']);
 Route::post('/inv/add', [Inventories_controller::class, 'store']);
 Route::get('/inv/delete/{inventories_model}', [Inventories_controller::class, 'destroy']);

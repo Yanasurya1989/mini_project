@@ -8,9 +8,10 @@
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                <h2 class="h3 mb-0 text-gray-800">Selamat datang {{Auth::user()->name}}</h2><br>
                 <a href="{{ url('inv/export/excel') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Export Excel</a>
             </div>
+            <h4 class="h5 mb-0 text-gray-800">anda login sebagai <a href="/logout">{{Auth::user()->role->name}}</a></h4>
             <a href="/inv/create" class="btn btn-primary mb-2">Add</a><br>
 
             <!-- Content Row -->
