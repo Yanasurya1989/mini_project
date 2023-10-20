@@ -22,7 +22,7 @@
                         <td>{{$list->created_at}}</td>
                         <td>{{$list->updated_at}}</td>
                         <td>
-                            <a href="#" class="btn btn-primary">detil</a>
+                            <a href="/inventory/{{$list->id}}" class="btn btn-primary">detil</a>
                             <a href="/inv/edit/{{$list->id}}" class="btn btn-warning">update</a>
                             <a href="/inv/delete/{{$list->id}}" class="btn btn-danger" onclick="return confirm('Are you sure?')">delete</a>
                         </td>

@@ -78,9 +78,18 @@ class Inventories_controller extends Controller
      * @param  \App\Models\Inventories_model  $inventories_model
      * @return \Illuminate\Http\Response
      */
-    public function show(Inventories_model $inventories_model)
+    // public function show(Inventories_model $inventories_model)
+    // {
+    //     // dd($inventories_model);
+    //     $inv = Inventories_model::all($inventories_model);
+    //     return view('backend.inventories.detil', compact('inv'));
+    // }
+
+    public function show($id)
     {
-        //
+        // dd($id);
+        $inv = Inventories_model::findOrFail($id);
+        return view('backend.inventories.detil', ['inv' => $inv]);
     }
 
     /**

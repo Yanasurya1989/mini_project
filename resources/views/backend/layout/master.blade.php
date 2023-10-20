@@ -18,9 +18,11 @@
                 @include('backend.layout.navbar')
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-                @yield('content')
-                <!-- /.container-fluid -->
+                <div class="container">
+                    <!-- Begin Page Content -->
+                    @yield('content')
+                    <!-- /.container-fluid -->
+                </div>
 
             </div>
             <!-- End of Main Content -->

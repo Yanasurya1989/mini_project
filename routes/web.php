@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Inventories_controller;
 use App\Http\Controllers\Auth_controller;
+use App\Http\Controllers\Sales_controller;
+use App\Http\Controllers\User_controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,7 +30,15 @@ Route::post('/inv/add', [Inventories_controller::class, 'store']);
 Route::get('/inv/delete/{inventories_model}', [Inventories_controller::class, 'destroy']);
 Route::get('/inv/edit/{inventories_model}', [Inventories_controller::class, 'edit']);
 Route::post('/inv/update/{inventories_model}', [Inventories_controller::class, 'update']);
+Route::get('/inventory/{id}', [Inventories_controller::class, 'show']);
 // export
 Route::get('/inv/export/excel', [Inventories_controller::class, 'export_excel']);
+
+// sales
+Route::get('/sales', [Sales_controller::class, 'index']);
+Route::get('/sales/{sales_model}', [Sales_controller::class, 'show']);
+
+// user
+Route::get('/user', [User_controller::class, 'index']);
 
 Route::get('/master', [Inventories_controller::class, 'edit']);
