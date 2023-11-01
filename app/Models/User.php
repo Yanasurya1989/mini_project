@@ -3,6 +3,9 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Http\Controllers\Sales_controller;
+use App\Http\Controllers\User_controller;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -46,5 +49,10 @@ class User extends Authenticatable
     public function role()
     {
         return $this->belongsTo(Role_model::class, 'role_id', 'id');
+    }
+
+    public function sales()
+    {
+        return $this->hasMany(Sales_model::class,  'id', 'user_id');
     }
 }

@@ -3,9 +3,9 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Date</th>
+      <th scope="col">User</th>
       <th scope="col">Create at</th>
       <th scope="col">updated at</th>
-      <th scope="col">User</th>
       <th scope="col">Aksi</th>
     </tr>
   </thead>
@@ -14,9 +14,9 @@
       <tr>
         <td>{{$loop->iteration}}</td>
         <td>{{$list->date}}</td>
+        <td>{{$list->useres->name}}</td>
         <td>{{$list->created_at}}</td>
         <td>{{$list->updated_at}}</td>
-        <td>{{$list->user->name}}</td>
         <td>
             <a href="/sales/{{$list->id}}" class="btn btn-primary">detil</a>
             <a href="#" class="btn btn-warning">update</a>
